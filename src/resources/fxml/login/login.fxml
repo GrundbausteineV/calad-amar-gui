@@ -6,6 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.login.loginController">
 <children><ImageView fx:id="login_image_background" fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true" /><HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="300.0">
@@ -29,7 +30,7 @@
 </font></Label><Label layoutX="990.0" layoutY="517.0" text="%key.login_password">
 <font>
 <Font name="System Bold" size="12.0" />
-</font></Label><PasswordField fx:id="login_passwordfield_password" layoutX="990.0" layoutY="545.0" minWidth="180.0" /><CheckBox layoutX="990.0" layoutY="575.0" mnemonicParsing="false" text="Save Data" /><HBox alignment="CENTER" layoutX="980.0" layoutY="669.0" prefHeight="37.0" prefWidth="286.0">
+</font></Label><PasswordField fx:id="login_passwordfield_password" layoutX="990.0" layoutY="545.0" minWidth="180.0" /><CheckBox fx:id="login_checkbox_savedata" layoutX="990.0" layoutY="575.0" mnemonicParsing="false" text="%key.login_savedata" /><HBox alignment="CENTER" layoutX="980.0" layoutY="669.0" prefHeight="37.0" prefWidth="286.0">
 <children><HBox alignment="CENTER_LEFT" layoutX="39.0" layoutY="-4.5" prefHeight="37.0" prefWidth="209.0">
 <children><Button fx:id="login_button_login" defaultButton="true" layoutX="1057.0" layoutY="589.0" mnemonicParsing="false" text="%key.login_login" />
 </children></HBox><HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
@@ -38,5 +39,5 @@
 </children>
 <padding>
 <Insets left="10.0" right="10.0" />
-</padding></HBox><Button fx:id="login_button_info" layoutX="14.0" layoutY="681.0" mnemonicParsing="false" text="%key.login_help" />
+</padding></HBox><Button fx:id="login_button_info" layoutX="14.0" layoutY="681.0" mnemonicParsing="false" text="%key.login_help" /><WebView fx:id="login_webview_news" layoutX="50.0" layoutY="69.0" prefHeight="575.0" prefWidth="864.0" />
 </children></AnchorPane>

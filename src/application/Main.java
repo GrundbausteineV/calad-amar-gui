@@ -54,6 +54,11 @@ public class Main extends Application {
 	public final String CREDIT_VERSION 			= "0.0.1";
 	public final String DATABASE_DIRECTORY		= "settings";
 	public final String DATABASE_FILE			= "settings.db";
+	public final String MYSQL_URL				= "10.0.100.111";
+	public final int MYSQL_PORT					= 3306;
+	public final String MYSQL_USER				= "ca_minecraft";
+	public final String MYSQL_PASS				= "FBbS78o0H5FKM5h4hhG8";
+	public final String MYSQL_DATABASE			= "ca_minecraft";
 	public final String CONFIG_DIRECTORY		= "configs";
 	public final String CONFIG_FILE				= "config.yml";
 	public final String SAVE_DIRECTORY			= "saves";

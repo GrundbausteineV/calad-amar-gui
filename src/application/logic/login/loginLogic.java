@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import database.sqlite.SQLite;
+import database.mysql.MySQL;
 import util.properties.propertiesFile;
 import application.Main;
 import javafx.scene.Group;
@@ -60,12 +60,19 @@ public class loginLogic {
         return generatedPassword;
 	}
 	
-	public boolean checkUsername(TextField textfield, String username, String password) {
+	public boolean checkUsername(TextField textfield, String username, String password, Boolean encrypt) {
 		
-		SQLite dbconn = new SQLite();
-		dbconn.connect(this.app.DATABASE_DIRECTORY, this.app.DATABASE_FILE);
+		MySQL dbconn = new MySQL(app);
+		dbconn.connect(this.app.MYSQL_URL, this.app.MYSQL_PORT, this.app.MYSQL_DATABASE, this.app.MYSQL_USER, this.app.MYSQL_PASS);
 		
-		ResultSet rs = dbconn.select("SELECT * FROM User;");
+		ResultSet rs = dbconn.select("SELECT * FROM JavaGuiUserdata;");
+		String pass = "";
+		
+		if(encrypt) {
+			pass = generatePasswordHash(password);
+		} else {
+			pass = password;
+		}
 		
 		try {
 			if (!rs.isBeforeFirst() ) {    
@@ -75,7 +82,7 @@ public class loginLogic {
 				return true;
 			} else {
 				while(rs.next()) {
-					if((rs.getString("Username").equalsIgnoreCase(username)) && (rs.getString("Password").equalsIgnoreCase(generatePasswordHash(password)))) {
+					if((rs.getString("Username").equalsIgnoreCase(username)) && (rs.getString("Password").equalsIgnoreCase(pass))) {
 						this.app.loadProgram();;
 						return true;
 					}
