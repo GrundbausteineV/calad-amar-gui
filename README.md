@@ -1,0 +1,1 @@
+Dies ist die Entwicklugnsversion der offiziellen Calad Amar GUI
