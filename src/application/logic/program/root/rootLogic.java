@@ -10,23 +10,25 @@ public class rootLogic {
 	// Reference to the main application
 	private Main app;
 	
+	private BorderPane pane = null;
+	
 	private AnchorPane employeePage;
 
 	/**
 	 * The constructor.
 	 * The constructor is called before the initialize() method.
 	 */
-	public rootLogic(Main app) {
+	public rootLogic(Main app, BorderPane pane) {
 		this.app = app;
-		
+		this.pane = pane;
 	}
 	
-	public void loadEmployee(BorderPane pane) {
+	public void loadCharacter() {
 		
 		try {
-	        FXMLLoader loader = new FXMLLoader(app.getClass().getResource("/resources/fxml/program/root/employee.fxml"));
+	        FXMLLoader loader = new FXMLLoader(app.getClass().getResource("/resources/fxml/program/root/character.fxml"));
 	        this.employeePage = (AnchorPane) loader.load();
-	        pane.setCenter(this.employeePage);
+	        this.pane.setCenter(this.employeePage);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

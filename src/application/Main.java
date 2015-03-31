@@ -242,8 +242,8 @@ public class Main extends Application {
 		this.programStage.setScene(scene);
 		this.programStage.show();
 		
-		this.rootLogicC = new rootLogic(this);
-		this.rootLogicC.loadEmployee(pane);
+		this.rootLogicC = new rootLogic(this, pane);
+		this.rootLogicC.loadCharacter();
 		
 	}
 	
