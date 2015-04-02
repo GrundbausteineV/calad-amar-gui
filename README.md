@@ -1,2 +1,1 @@
-Dies ist die Entwicklungsversion der offiziellen Calad Amar GUI.
-Künftig werden aus ihr heraus Statistiken und Übersichten abrufbar sein.
+The project moved to: http://git.grundbaustein-ev.de:27000/calad-amar/server-gui/tree/master
